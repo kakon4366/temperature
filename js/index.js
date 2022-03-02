@@ -15,11 +15,12 @@ const innerText = (id, text) => {
 
 //display data
 const displayWeather = weather => {
+    //icon show
+    const imgURL = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
+    const tempImg = document.getElementById('temp-img');
+    tempImg.setAttribute('src', imgURL);
+
     innerText('city-name', weather.name);
     innerText('temperature', weather.main.temp);
     innerText('defarence', weather.weather[0].main);
-
-    console.log(weather);
 }
-
-// http://openweathermap.org/img/wn/10d@2x.png
